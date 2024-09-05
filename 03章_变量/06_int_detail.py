@@ -2,6 +2,13 @@
 # @Author   : LiHongFei
 # @File     : 06_int_detail.py
 # @Time     : 2024/9/4 22:14
+
+# 使用
+n1 = 45
+n2 = 88
+print("n1 =", n1)
+print("n2 =", n2)
+
 import sys
 
 # 讲解int类型的细节
