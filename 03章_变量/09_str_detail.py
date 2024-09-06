@@ -41,3 +41,25 @@ print(content)
 # 在字符串前面加 'r' 可以使整个字符串不会被转义
 str4 = r"jack\ntom\tking"
 print(str4)
+
+
+# 讲解字符串的驻留机制
+str1 = "Hello"
+str2 = "Hello"
+str3 = "Hello"
+
+# id()函数是，可以返回对象/数据的内存地址
+print("str1的地址:", id(str1))
+print("str2的地址:", id(str2))
+print("str3的地址:", id(str3))
+
+
+str1 = "abc123#"
+str2 = "abc123#"
+print(id(str1), id(str2))
+
+# pycharm做了优化
+num1 = -100
+num2 = -100
+print("-----------")
+print(id(num1), id(num2))  # 2247916826128 2247916826128
