@@ -1,6 +1,6 @@
 # @Version  : 1.0
 # @Author   : LiHongFei
-# @File     : 14_identifier_rule_exercise.py
+# @File     : 13_identifier_rule_exercise.py
 # @Time     : 2024/9/10 21:40
 
 # 练习题：判断变量名是否正确，并说明理由  (2min)
