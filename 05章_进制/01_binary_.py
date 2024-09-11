@@ -14,3 +14,6 @@ print(111)
 # 16 进制
 print(0x111)
 print(0X111)
+
+print("----------")
+print(0b1011)
