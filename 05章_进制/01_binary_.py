@@ -17,3 +17,20 @@ print(0X111)
 
 print("----------")
 print(0b1011)
+print(0o234)
+print(0x23A)
+
+print("------------")
+print(0b110001100)
+print(0o2456)
+print(0xA45)
+
+print("---------")
+print(bin(34))  # 0b100010
+print(oct(131))  # 0o203
+print(hex(237))  # 0xED
+
+print("------------")
+print(bin(123))
+print(oct(678))
+print(hex(8912))
