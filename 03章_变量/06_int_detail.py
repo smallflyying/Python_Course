@@ -42,3 +42,6 @@ print(n3, sys.getsizeof((n3)), "类型", type(n3))
 print(n4, sys.getsizeof((n4)), "类型", type(n4))
 print(n5, sys.getsizeof((n5)), "类型", type(n5))
 print(n6, sys.getsizeof((n6)), "类型", type(n6))
+print(sys.getsizeof(10))  # 28字节
+
+print(sys.getsizeof(3))  # 28字节
