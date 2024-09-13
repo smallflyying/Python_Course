@@ -1,0 +1,31 @@
+# @Version  : 1.0
+# @Author   : LiHongFei
+# @File     : 09_if_3.py
+# @Time     : 2024/9/13 23:05
+
+# 小头儿子 参加python 考试, 他和 大头爸爸 达成承诺:
+# 如果:
+# 成绩为100分时,奖励一辆BMW;
+# 成绩为(80,99]时,奖励一台iphone13;
+# 当成绩为[60,80]时,奖励一个iPad;
+# 其它时,什么奖励也没有.
+# 请从键盘输入小头儿子的期末成绩,并加以判断
+"""
+    思路分析
+    1. 定义变量score 接收成绩 转成一个int
+    2. 根据成绩进行判断,输出相应的提示信息即可
+    3. 使用多分支搞定 if - elif - ... else
+"""
+score = int(input("请输入成绩[整数]: "))
+if score >= 0 and score <= 100:
+    if score == 100:
+        print("奖励一辆BMW")
+    elif score > 80 and score <= 99:
+        print("奖励一台iphone13")
+    elif score >= 60 and score <= 80:
+        print("奖励一个iPad")
+    else:
+        print("啥也没有...")
+
+else:
+    print(score, "不在0~100")
