@@ -17,12 +17,12 @@
     3. 使用多分支搞定 if - elif - ... else
 """
 score = int(input("请输入成绩[整数]: "))
-if score >= 0 and score <= 100:
+if 0 <= score <= 100:
     if score == 100:
         print("奖励一辆BMW")
-    elif score > 80 and score <= 99:
+    elif 80 < score <= 99:
         print("奖励一台iphone13")
-    elif score >= 60 and score <= 80:
+    elif 60 <= score <= 80:
         print("奖励一个iPad")
     else:
         print("啥也没有...")
