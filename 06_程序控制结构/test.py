@@ -17,9 +17,19 @@
 
 # 演示random.randint() 的使用
 # 导入random模块
-import random
+# import random
+#
+# # 1<=n<=100
+# for i in range(8):
+#     n = random.randint(1, 100)
+#     print("n = ", n)
 
-# 1<=n<=100
-for i in range(8):
-    n = random.randint(1, 100)
-    print("n = ", n)
+n = 90
+if n > 300:
+    print("n > 300")
+elif n > 200:
+    print("n > 200")
+elif n > 100:
+    print("n > 100")
+# else:
+#     print("不满足上述条件")
