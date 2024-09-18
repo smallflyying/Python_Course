@@ -80,5 +80,69 @@ def book_info2(name='<<thinking in python>>', price=66.8, author='龟叔', amoun
 
 
 # 调用测试
-book_info2()
+# book_info2()
 # book_info2('<<study python>>')
+
+
+
+# - 默认参数，需要放在参数列表后
+def book_info3(name, price, author='龟叔', amount=1000):
+    print(f"name->{name} price->{price} author->{author} amount->{amount}")
+
+
+# 调用测试
+# book_info3('<<python 揭秘>>', 999)
+
+
+# 错误的写法
+# def book_info4(author='龟叔', amount=1000,name, price):
+#     print(f"name->{name} price->{price} author->{author} amount->{amount}")
+
+
+
+# 函数支持可变参数/不定长参数， 应用场景：当调用函数时，不确定传入多少个实参的情况
+# 比如我们要计算多个数的和，但是不确定是几个数  *[0到多]
+# def sum(*args):
+#     # 输出了args的数据和类型 (1, 2, 3, ... , 100)
+#     print(f"args->{args}  类型是->{type(args)}")
+#     total = 0
+#     # 对args进行遍历，即对元组tuple遍历
+#     for element in args:
+#         total += element
+#     return total
+
+
+# 调用测试
+# result = sum(1, 2)
+# print(f"result->{result}")
+
+
+# result = sum(1, 2, 3, -10)
+# print(f"result->{result}")
+
+
+# result = sum()
+# print(f"result->{result}")
+
+
+# 10、函数的可变参数/不定义参数 还支持多个关键字参数，也就是 多个 “形参名=实参值”
+# - 应用场景：当调用函数时，不确定传入多少个 关键字参数 的情况
+# - 传入的多个关键字参数，会被组成一个字典(dict)，后面会详细讲解字典，这里简单的了解下，
+# - 简单说明：字典可以储存多个 键=值  的数据项
+
+# 比如我们需要接收一个人的信息，但是有哪些信息是不确定的，就可以使用关键字可变参数
+def person_info(**args):
+    # 输出args的数据 {'name': 'lhf', 'age': 22, 'email': 'lhf@qq.com'} 和 类型
+    print(f"kwargs->{args} 类型->{type(args)}")
+    # 遍历args，是一个字典，下面的arg_name就是取出各个参数名，
+    # agrs[arg_name]就是取出参数值
+    for arg_name in args:
+    # for arg_name in {'name': 'lhf', 'age': 22, 'email': 'lhf@qq.com'}:
+        print(f"参数名->{arg_name} 参数值->{args[arg_name]}")
+
+
+# 测试
+# person_info(name="lhf", age=22, email="lhf@qq.com")
+# person_info(name="lhf", age=22, email="lhf@qq.com", sex="男", address="北京")
+person_info()
+
