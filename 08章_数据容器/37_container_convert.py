@@ -48,5 +48,5 @@ print(f"tuple_a转成set: {set(tuple_a)}")
 print(f"dict_a转成set: {set(dict_a)}")
 
 
-print("-" * 60)
-print(f"str_a转成dict: {dict(str_a, 1)}")
+# print("-" * 60)
+# print(f"str_a转成dict: {dict(str_a, 1)}")
