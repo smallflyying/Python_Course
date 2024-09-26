@@ -46,7 +46,7 @@ for value in dict_b.values():
 
 # 遍历方式3-依次取出key-value
 print("---------------遍历方式3--------------")
-for k,v in dict_b.items():
+for k, v in dict_b.items():
     print(f"key: {k} value: {v}")
 
 
