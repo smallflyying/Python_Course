@@ -103,7 +103,7 @@ else:
 #
 #             # 向右扩展查找相同的元素
 #             i = mid_index + 1
-#             while i < len(my_list) and my_list[i] == find_val:
+#             while i < len(my_list) - 1 and my_list[i] == find_val:
 #                 list_index.append(i)
 #                 i += 1
 #
