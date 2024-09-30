@@ -48,21 +48,44 @@
 
 
 # self 表示当前对象本身，简单地说，哪个对象调用，self就代表哪个对象
+# class Dog:
+#     name = "藏獒"
+#     age = 2
+#
+#     def hi(self):
+#         print(f"hi self: {id(self)}")  # 自身
+#
+#
+# # self表示当前对象本身
+# # 创建对象dog2
+# dog2 = Dog()
+# print(f"dog2: {id(dog2)}")
+# dog2.hi()  # dog2.hi(dog2)
+# # 创建对象dog3
+# print("-------------------------")
+# dog3 = Dog()
+# print(f"dog3: {id(dog3)}")
+# dog3.hi()
+
+
+# 在方法内部，要访问成员变量和成员方法，需要使用self
+
 class Dog:
     name = "藏獒"
     age = 2
 
-    def hi(self):
-        print(f"hi self: {id(self)}")  # 自身
+    def eat(self):
+        print(f"{self.name} 饿了...")
+
+    def cry(self, name):
+        print(f"{name} is crying...")  # 金毛 is crying...
+        print(f"{self.name} is crying...")  # 藏獒 is crying...
+        self.eat()  # 藏獒 饿了...
+        # 不能直接调用
+        # eat()
 
 
-# self表示当前对象本身
-# 创建对象dog2
-dog2 = Dog()
-print(f"dog2: {id(dog2)}")
-dog2.hi()
-# 创建对象dog3
-print("-------------------------")
-dog3 = Dog()
-print(f"dog3: {id(dog3)}")
-dog3.hi()
+dog = Dog()
+# 修改了 dog 对象的属性name => 中华田园犬
+# dog.name = "中华田园犬"
+dog.cry("金毛")
