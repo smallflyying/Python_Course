@@ -19,4 +19,6 @@ def cal(num1: Union[int, float],
     return num1 + num2
 
 
+# TypeError: can only concatenate str (not "float") to str
+# print(f"结果是: {cal("10", 20.2)}")
 print(f"结果是: {cal(10, 20.2)}")
