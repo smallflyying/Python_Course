@@ -17,11 +17,11 @@ print("排序前".center(32, "-"))
 # print("排序前".center(62, "="))
 print(f"num_list: {num_list}")
 
+
 # 使用sort方法完成排序
 # num_list.sort()
 # print("排序后".center(32, "-"))
 # print(f"num_list: {num_list}")
-
 
 
 # 使用冒泡排序，自己完成排序，目的了解底层原理，生科理解
