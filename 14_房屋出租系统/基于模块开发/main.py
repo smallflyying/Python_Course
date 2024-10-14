@@ -22,7 +22,7 @@ def main():
         key = input("请输入你的选择(1-6): ")
         if key in ["1", "2", "3", "4", "5", "6"]:
             if key == "1":
-                print("输入了1-后面我们会处理逻辑")
+                add_house()
             elif key == "2":
                 print("输入了2-后面我们会处理逻辑")
             elif key == "3":
@@ -30,7 +30,7 @@ def main():
             elif key == "4":
                 print("输入了4-后面我们会处理逻辑")
             elif key == "5":
-                print("输入了5-后面我们会处理逻辑")
+                list_houses()
             elif key == "6":
                 break
 
