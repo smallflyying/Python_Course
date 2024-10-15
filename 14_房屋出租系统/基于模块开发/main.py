@@ -24,7 +24,7 @@ def main():
             if key == "1":
                 add_house()
             elif key == "2":
-                print("输入了2-后面我们会处理逻辑")
+                find_house()
             elif key == "3":
                 del_house()
             elif key == "4":
@@ -32,7 +32,8 @@ def main():
             elif key == "5":
                 list_houses()
             elif key == "6":
-                break
+                if exit_sys():
+                    break
 
 
 # 测试

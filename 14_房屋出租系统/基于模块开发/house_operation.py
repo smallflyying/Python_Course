@@ -25,6 +25,37 @@ houses = [{"id": 1, "name": "tim", "phone": "112", "address": "海淀", "rent": 
 id_counter = 1
 
 
+def find_house():
+    """
+    查找房屋信息
+    :return:
+    """
+    print("查找房屋信息".center(32, "="))
+    find_id = int(input("请输入要查找的id: "))
+    # 调用函数返回对应的房屋信息
+    house = find_by_id(find_id)
+    if house:
+        # 打印表头信息
+        print("编号\t\t房主\t\t电话\t\t地址\t\t月租\t\t状态(未出租/已出租)")
+        for value in house.values():
+            print(value, end="\t\t")
+        print()
+    else:
+        print(f"查找房屋信息id {find_id} 不存在".center(32, "="))
+
+
+def exit_sys():
+    """
+    完成退出系统，并确认(Y/N)
+    :return: 如果是确认退出返回True, 否则返回False
+    """
+    choice = read_confirm_select()
+    if choice == 'y':
+        return True
+    else:
+        return False
+
+
 def find_by_id(find_id):
     """
     根据输入的find_id返回对应的房屋信息(字典), 如果没有就返回None
