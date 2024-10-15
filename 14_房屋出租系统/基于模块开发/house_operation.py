@@ -7,6 +7,9 @@
     说明：提供对房屋的各种操作
 """
 
+from my_tools import *
+
+
 # 1. 使用字典来存储房屋信息
 # 2. 一个字典对象就对应一个房屋信息
 # 3. 多个字典/房屋信息，就放到list中进行管理
@@ -20,6 +23,51 @@ houses = [{"id": 1, "name": "tim", "phone": "112", "address": "海淀", "rent": 
 
 # 全局变量id_counter 记录当前房屋的id
 id_counter = 1
+
+
+def find_by_id(find_id):
+    """
+    根据输入的find_id返回对应的房屋信息(字典), 如果没有就返回None
+    :param find_id:
+    :return:
+    """
+    # 遍历houses列表
+    for house in houses:
+        if house["id"] == find_id:
+            return house
+    # 如果没有return，默认就是返回None
+    # return None
+
+
+def del_house():
+    """
+    根据id删除房屋信息
+    :return:
+    """
+    print("删除房屋信息".center(32, "="))
+    del_id = int(input("请输入待删除房屋的编号(-1退出): "))
+    if del_id == -1:
+        print("放弃删除房屋信息".center(32, "="))
+        return
+
+    # 让用户确认删除(Y/N)
+    # while True:
+    #     key = input("请输入你的选择(Y/N), 请确认选择: ")
+    #     if key.lower() == "y" or key.lower() == "n":
+    #         break
+    choice = read_confirm_select()
+
+    if choice == 'y':  # 如果真的要删除
+        # 根据del_id 去houses列表查找是否存在该房屋[字典]
+        house = find_by_id(del_id)
+        if house:
+            # 执行删除
+            houses.remove(house)
+            print("删除房屋信息成功".center(32, "="))
+        else:
+            print("房屋编号不存在, 删除失败...".center(32, "="))
+    else:
+        print("放弃删除房屋信息".center(32, "="))
 
 
 def add_house():

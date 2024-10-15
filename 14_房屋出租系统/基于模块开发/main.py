@@ -26,7 +26,7 @@ def main():
             elif key == "2":
                 print("输入了2-后面我们会处理逻辑")
             elif key == "3":
-                print("输入了3-后面我们会处理逻辑")
+                del_house()
             elif key == "4":
                 print("输入了4-后面我们会处理逻辑")
             elif key == "5":
