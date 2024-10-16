@@ -28,7 +28,7 @@ def main():
             elif key == "3":
                 del_house()
             elif key == "4":
-                print("输入了4-后面我们会处理逻辑")
+                update()
             elif key == "5":
                 list_houses()
             elif key == "6":

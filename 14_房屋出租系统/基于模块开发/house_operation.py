@@ -25,6 +25,57 @@ houses = [{"id": 1, "name": "tim", "phone": "112", "address": "海淀", "rent": 
 id_counter = 1
 
 
+def update():
+    """
+    修改房屋信息
+    :return:
+    """
+    update_id = int(input("请选择待修改的房屋编号(-1表示退出): "))
+    if update_id == -1:
+        print("你放弃修改房屋信息".center(32, "="))
+        return
+    # 根据id查找对应的房屋信息(字典)
+    house = find_by_id(update_id)
+    if not house:
+        print("没有要修改的房屋信息".center(32, "="))
+        return
+
+    # 注意：如果用户直接回车，表示不修改当前这个信息，保留原来的值
+    # 先写出后优化
+    # name = input(f"姓名({house["name"]}): ")
+    # if len(name) > 0:  # 如果用户输入的有内容
+    #     # 表示将接收到的name 赋给 house字典 key="name" 对应的值
+    #     house["name"] = name
+
+    house["name"] = read_str(f"姓名({house["name"]}): ", house["name"])
+
+    # phone = input(f"电话({house["phone"]}): ")
+    # if len(phone) > 0:
+    #     house["phone"] = phone
+
+    house["phone"] = read_str(f"电话({house["phone"]}): ", house["phone"])
+
+    # address = input(f"地址({house["address"]}): ")
+    # if len(address) > 0:
+    #     house["address"] = address
+
+    house["address"] = read_str(f"地址({house["address"]}): ", house["address"])
+
+    # rent = input(f"月租({house["rent"]}): ")
+    # if len(rent) > 0:
+    #     house["rent"] = int(rent)
+
+    house["rent"] = int(read_str(f"月租({house["rent"]}): ", house["rent"]))
+
+    # state = input(f"状态({house["state"]}): ")
+    # if len(state) > 0:
+    #     house["state"] = state
+
+    house["state"] = read_str(f"状态({house["state"]}): ", house["state"])
+
+    print("修改房屋信息成功".center(32, "="))
+
+
 def find_house():
     """
     查找房屋信息

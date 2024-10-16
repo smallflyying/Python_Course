@@ -7,6 +7,20 @@
 """
 
 
+def read_str(tip, default_val):
+    """
+    读取用户的输入，如果用户没有输入内容，则返回default_val
+    :param tip: 提示信息
+    :param default_val: 用户指定
+    :return: 返回的就是需要的新数据
+    """
+    str = input(tip)
+    if len(str):
+        return str
+    else:
+        return default_val
+
+
 def read_confirm_select():
     """
     确认用户输入的是(Y/N), 不区分大小写，
