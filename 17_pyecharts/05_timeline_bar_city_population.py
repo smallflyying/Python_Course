@@ -11,6 +11,7 @@ from pyecharts.globals import ThemeType
 
 """准备数据"""
 
+
 # 确定需要创建多少个Bar对象,根据文件提供的年份 2003-2022
 
 with open("分省年度数据.csv", "r", encoding="gbk") as f:
@@ -24,11 +25,10 @@ for _ in range(3):
 for _ in range(2):
     data_lines.pop(-1)
 
-# print("data_lines", data_lines)
+
 years = data_lines.pop(0).replace("\n", "").split(",")
 # 去掉第一个元素"地区"
 years.pop(0)
-# print("years", years)
 
 # 遍历 data_lines 生成需要的数据
 # 难点-需要我们设计
@@ -39,28 +39,22 @@ years.pop(0)
 data_dict = {}
 
 for data_line in data_lines:
-    # print("data_line", data_line)
     data_line_list = data_line.replace("\n", "").split(",")
-    # print("data_line_list", data_line_list)
     # 遍历years 给各个城市的各个年份的人口数据添加到data_dict
     index = 0
     for year in years:
         index += 1
         try:
-            # data_dict[year].append([data_line_list[0], float(data_line_list[index])])
             data_dict[year].append([data_line_list[0], float(data_line_list[index])])
         except Exception as e:
             # 如果出现了异常,说明是第一次添加数据
             data_dict[year] = []
             data_dict[year].append([data_line_list[0], float(data_line_list[index])])
-            # data_dict[year] = []
-            # data_dict[year].append([data_line_list[0], float(data_line_list[index])])
 
-# print("data_dict", data_dict)
+
 """创建Timeline对象"""
 timeline = Timeline({"theme": ThemeType.ESSOS})
 years.reverse()
-# print(years)
 
 """创建Bar对象 并加入到Timeline对象 还有进行配置"""
 for year in years:
@@ -68,18 +62,13 @@ for year in years:
     # 1. 先排序 2. 切片
     data_dict[year].sort(key=lambda ele: ele[1], reverse=True)
     rank_12_city_data = data_dict[year][0:12]
-    # rank_12_city_data = data_dict[year][0:12]
-    # print(year, rank_12_city_data)
     # 定义Bar的X轴数据
     x_data = []
     # 定义Bar的Y轴数据
     y_data = []
     for city in rank_12_city_data:
-        # print("city", city)
         x_data.append(city[0])
         y_data.append(city[1])
-        # x_data.append(city[0])
-        # y_data.append(city[1])
     # 创建Bar对象
     bar = Bar()
     # 对x_data数据和y_data数据翻转
@@ -87,8 +76,6 @@ for year in years:
     y_data.reverse()
     bar.add_xaxis(x_data)
     bar.add_yaxis("人口(万)", y_data)
-    # bar.add_xaxis(x_data)
-    # bar.add_yaxis("人口(万)", y_data)
     # 转换X和Y轴
     bar.reversal_axis()
     # 全局配置
