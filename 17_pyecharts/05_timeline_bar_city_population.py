@@ -95,7 +95,7 @@ for year in years:
     bar.set_global_opts(title_opts=opts.TitleOpts(title=f"{year}年中国省市人口排名前12的情况"))
 
     # 将创建好的bar添加到Timeline对象
-    timeline.add(bar, str(year))
+    timeline.add(bar, year)
 
 # 对时间线进行配置
 timeline.add_schema(
